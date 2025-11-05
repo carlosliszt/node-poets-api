@@ -1,0 +1,968 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-11-05T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_auth_register",
+      "parentId": "fld_auth",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/auth/register",
+      "name": "Register",
+      "description": "Registrar novo usuário",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"teste\",\n\t\"email\": \"teste@email.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1699142400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_auth_login",
+      "parentId": "fld_auth",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/auth/login",
+      "name": "Login",
+      "description": "Fazer login e obter token JWT",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1699142300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_auth_me",
+      "parentId": "fld_auth",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/auth/me",
+      "name": "Get Current User",
+      "description": "Obter dados do usuário autenticado",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699142200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_list",
+      "parentId": "fld_users",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/users",
+      "name": "List All Users",
+      "description": "Listar todos os usuários (protegido)",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699142100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_get",
+      "parentId": "fld_users",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/users/1",
+      "name": "Get User By ID",
+      "description": "Obter usuário por ID (protegido)",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699142000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_create",
+      "parentId": "fld_users",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/users",
+      "name": "Create User",
+      "description": "Criar novo usuário (protegido)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"novo_usuario\",\n\t\"email\": \"novo@email.com\",\n\t\"password\": \"senha123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_update",
+      "parentId": "fld_users",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/users/1",
+      "name": "Update User",
+      "description": "Atualizar usuário (protegido)",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"usuario_atualizado\",\n\t\"email\": \"atualizado@email.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_users_delete",
+      "parentId": "fld_users",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/users/1",
+      "name": "Delete User",
+      "description": "Deletar usuário (protegido)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_list",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets",
+      "name": "List All Poets",
+      "description": "Listar todos os poetas",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_filter_nationality",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets",
+      "name": "Filter Poets by Nationality",
+      "description": "Filtrar poetas por nacionalidade",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "nationality",
+          "value": "Brasileira"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141550000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_filter_movement",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets",
+      "name": "Filter Poets by Movement",
+      "description": "Filtrar poetas por movimento literário",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "movement",
+          "value": "Modernismo"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141540000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_get",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets/1",
+      "name": "Get Poet By ID",
+      "description": "Obter poeta por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_with_books",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets/1/books",
+      "name": "Get Poet With Books",
+      "description": "Obter poeta com seus livros",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141450000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_create",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets",
+      "name": "Create Poet",
+      "description": "Criar novo poeta (protegido)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Machado de Assis\",\n\t\"birth_year\": 1839,\n\t\"death_year\": 1908,\n\t\"nationality\": \"Brasileira\",\n\t\"literary_movement\": \"Realismo\",\n\t\"biography\": \"Escritor brasileiro, considerado o maior nome da literatura nacional.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_update",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets/1",
+      "name": "Update Poet",
+      "description": "Atualizar poeta (protegido)",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Carlos Drummond de Andrade (Atualizado)\",\n\t\"biography\": \"Biografia atualizada do poeta.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poets_delete",
+      "parentId": "fld_poets",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poets/10",
+      "name": "Delete Poet",
+      "description": "Deletar poeta (protegido)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699141200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_list",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books",
+      "name": "List All Books",
+      "description": "Listar todos os livros",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_filter_poet",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books",
+      "name": "Filter Books by Poet",
+      "description": "Filtrar livros por poeta",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "poet_id",
+          "value": "1"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141050000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_get",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books/1",
+      "name": "Get Book By ID",
+      "description": "Obter livro por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699141000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_with_poems",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books/1/poems",
+      "name": "Get Book With Poems",
+      "description": "Obter livro com seus poemas",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140950000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_create",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books",
+      "name": "Create Book",
+      "description": "Criar novo livro (protegido)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Novo Livro de Poesias\",\n\t\"poet_id\": 1,\n\t\"isbn\": \"978-1234567890\",\n\t\"publication_year\": 2024,\n\t\"publisher\": \"Editora Moderna\",\n\t\"pages\": 150,\n\t\"language\": \"Português\",\n\t\"edition\": 1,\n\t\"description\": \"Coletânea de novos poemas.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_update",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books/1",
+      "name": "Update Book",
+      "description": "Atualizar livro (protegido)",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Título Atualizado\",\n\t\"description\": \"Descrição atualizada do livro.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_books_delete",
+      "parentId": "fld_books",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/books/10",
+      "name": "Delete Book",
+      "description": "Deletar livro (protegido)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_list",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems",
+      "name": "List All Poems",
+      "description": "Listar todos os poemas",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_filter_book",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems",
+      "name": "Filter Poems by Book",
+      "description": "Filtrar poemas por livro",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "book_id",
+          "value": "1"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140550000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_filter_theme",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems",
+      "name": "Filter Poems by Theme",
+      "description": "Filtrar poemas por tema",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "theme",
+          "value": "amor"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140540000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_filter_style",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems",
+      "name": "Filter Poems by Style",
+      "description": "Filtrar poemas por estilo",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "style",
+          "value": "Soneto"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140530000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_get",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems/1",
+      "name": "Get Poem By ID",
+      "description": "Obter poema por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1699140500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_create",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems",
+      "name": "Create Poem",
+      "description": "Criar novo poema (protegido)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Novo Poema\",\n\t\"book_id\": 1,\n\t\"content\": \"No meio do caminho tinha uma pedra\\ntinha uma pedra no meio do caminho\\ntinha uma pedra\\nno meio do caminho tinha uma pedra.\",\n\t\"page_number\": 42,\n\t\"verses_count\": 4,\n\t\"stanzas_count\": 1,\n\t\"style\": \"Verso Livre\",\n\t\"theme\": \"Obstáculos\",\n\t\"notes\": \"Poema sobre os desafios da vida.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_update",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems/1",
+      "name": "Update Poem",
+      "description": "Atualizar poema (protegido)",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Título Atualizado\",\n\t\"notes\": \"Notas atualizadas sobre o poema.\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_poems_delete",
+      "parentId": "fld_poems",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "url": "{{ _.base_url }}/poems/10",
+      "name": "Delete Poem",
+      "description": "Deletar poema (protegido)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1699140200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_auth",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "🔐 Authentication",
+      "description": "Endpoints de autenticação e autorização",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142400000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_users",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "👥 Users",
+      "description": "CRUD de usuários (protegido)",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142300000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_poets",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "📖 Poets",
+      "description": "CRUD de poetas",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142200000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_books",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "📚 Books",
+      "description": "CRUD de livros",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142100000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_poems",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "✍️ Poems",
+      "description": "CRUD de poemas",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699142000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_main",
+      "parentId": null,
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "API Poesias - Node.js + Express",
+      "description": "API REST completa para gerenciamento de poetas, livros e poemas com autenticação JWT",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_main",
+      "parentId": "wrk_main",
+      "modified": 1699142400000,
+      "created": 1699142400000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000/api",
+        "token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1699142400000,
+      "_type": "environment"
+    }
+  ]
+}
+
